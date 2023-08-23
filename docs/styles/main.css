@@ -2,12 +2,16 @@
 	font-family: APL;
 	src: local("APL385 Unicode"), url("../assets/apl385.ttf");
 }
-.language-APL {
+.language-apl {
 	font-family: APL!important;
 	line-height: 1.2em!important;
 }
 code {
 	font-family: APL;
+  background: none;
+}
+code:not(.language-apl) {
+  font-family: Courier, monospace; /*  */
 }
 .md-logo > img{
 	width: 7rem!important;
@@ -46,5 +50,6 @@ pre + pre > code, hr + pre > code {
 .example {
   /* Standalone example blocks */
   /* all caps, no page break (printed) */
-  
+  text-transform: uppercase;
+  page-break-after: never; /* TODO: check this */
 }
