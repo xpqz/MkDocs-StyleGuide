@@ -10,7 +10,7 @@ code {
 	font-family: APL;
   background: none;
 }
-code:not(.language-apl) {
+code.nonAPL {
   font-family: Courier, monospace; /*  */
 }
 .md-logo > img{
@@ -29,7 +29,8 @@ code:not(.language-apl) {
 	--md-primary-fg-color--dark: #563336;
 	--md-default-bg-color: #F8F8F8;
 }
-/* Code copy only input (see CONTRIBUTING.md) */
+/*
+ Code copy only input (see CONTRIBUTING.md) 
 pre + pre > button, pre + hr {
     display: none!important;
 }
@@ -45,6 +46,7 @@ pre + pre , hr + pre {
 pre + pre > code, hr + pre > code {
     padding-top: 0.2em!important;
 }
+*/
 
 /* Paragraph styles */
 .example {

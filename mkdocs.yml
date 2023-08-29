@@ -1,8 +1,15 @@
-site_name: My Docs
+site_name: Material for MkDocs Style Guide
+copyright: Copyright &copy; 2015-2022 <strong><a href="https://dyalog.com" target="_blank" rel="noopener">Dyalog, LTD</a></strong>
 theme:
   name: material
+  favicon: 'img/favicon-32.png'
+  language: en
+  logo: 'img/dyalog-white.svg'
 markdown_extensions:
   - admonition
+  - pymdownx.highlight:
+      use_pygments: false
+  - md_in_html
   - pymdownx.details
   - pymdownx.superfences
   - attr_list
