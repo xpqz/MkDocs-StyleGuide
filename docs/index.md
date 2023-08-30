@@ -1,8 +1,17 @@
-# Dyalog Material for MkDocs Style Guide
+# Dyalog Documentation Style Guide
+When using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 
-## Document structure and general style guidelines
+todo: how to do things in markdown/html
 
-The document structure and general style, including the use of Dyalog-specific terms, mentioning third party products, use of acronyms etc. should be followed according to the page [Style_Guide_and_Best_Practice](http://wiki.dyalog.bramley/index.php/Style_Guide_and_Best_Practice) on the internal wiki.
+## Document Structure and General Style Guidelines
+
+!!! Info "Information"
+    [Style_Guide_and_Best_Practice](http://wiki.dyalog.bramley/index.php/Style_Guide_and_Best_Practice) on the internal wiki covers:
+
+    - The structure to use for documents
+    - General rules to follow when writing, including language-related guidelines such as the use of Dyalog-specific terms, how to mention third-party products, and the use of abbreviations and acronyms.
+
+    Please make sure you follow these as well as the styles detailed on this page.
 
 Some aspects have been adapted in this document for use with Material for MkDocs:
 
@@ -11,27 +20,75 @@ Some aspects have been adapted in this document for use with Material for MkDocs
 - [Notes](#notes)
 
 ## Headings
+Headings are denoted by a number of octothorpes corresponding to the heading level.
+
+```
+# Heading 1
+## Heading 2
+###### Heading 6
+```
+
 Headings should be written in [title case](https://en.wikipedia.org/wiki/Title_case#Chicago_Manual_of_Style).
 
 Try to avoid multiple consecutive headings with no intervening text.
 
 ## Italics
-Use italics when introducing a new term.
+Italics are denoted by single asterisks surrounding the text.
+
+<p class="example">example</p>
+
+```
+The word *asterisks* is italicised.
+```
+
+The word *asterisks* is italicised.
 
 ## Bold
-- file names, file paths and directories folders and file extensions
-- UI components (not buttons)
-    <p class="example">example</p>
+Bold text is denoted by double asterisks surrounding text.
 
-    > Go to the **file** menu
+Bold text is used for:
+
+- file names
+- file paths
+- directory and folder names
+- file extensions
+- UI components (not buttons)
+
+<p class="example">example</p>
+
+```
+Go to the **file** menu
+```
+
+Go to the **file** menu
 
 ## Notes
+
+### Creating a Note
 Notes are [admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).
+
+They are denoted by three exclamation marks followed by the note type and optional title text. On subsequent lines, note content is indented by four spaces.
+
+We use a fixed set of admonition types for consistency. Do not forget to include custom text on notes which use them and do not change the custom text.
+
+<p class="example">example</p>
+
+```
+!!! Tip "Hints and Recommendations"
+    This is the note content.
+```
+
+!!! Tip "Hints and Recommendations"
+    This is the note content.
+
+### General Notes for Emphasis
 
 Various icons are used in the documentation to emphasise specific material:
 
-!!! Tip
+!!! Tip "Hints and Recommendations"
     Hints, tips, best practice and recommendations from Dyalog Ltd
+
+    This note type is "Tip".
 
     <p class="example">example</p>
 
@@ -58,36 +115,38 @@ Various icons are used in the documentation to emphasise specific material:
 
     Although .dyapp files are supported for backwards compatibility, Dyalog Ltd recommends launching the interpreter directly from any APL source or configuration file (functionality introduced with Dyalog version 18.0) rather than through the now-superseded .dyapp file mechanism.
 
+### Operating-system-specific Behaviour
+
 Notes are also used to differentiate between operating-system-specific behaviour in cross-platform documents:
 
-!!! linux
+!!! linux "Dyalog on Linux"
     <p class="example">example</p>
 
     The MyUCMDs directory is located directly under the **$HOME** directory
 
-!!! unix
+!!! unix "Dyalog on UNIX"
     <p class="example">example</p>
 
     By default, the cache file is located in **$HOME/.dyalog/**
 
-!!! macOS
+!!! macOS "Dyalog on macOS"
     <p class="example">example</p>
 
     By default, the cache file is located in **Users/<name\>/.dyalog/**
 
-!!! Microsoft Windows
+!!! windows "Dyalog on Microsoft Windows"
     <p class="example">example</p>
 
     By default, the cache file is located in **Documents\\Dyalog APL <version> Files\\**
 
 ## Actions and Instructions
-Blocks which contain instructions should be surrounded by horizontal rules. The introductory line ("To do...") should be **bold**.
+Blocks which contain instructions should be surrounded by horizontal rules. The introductory line ("To do...") should be **bold** and should not end with any punctuation.
 
 <span class="example">Example</span>
 
 ---
 
-**To do this thing:**
+**To do this thing**
 
 1. Do this thing
 2. Then do this thing
@@ -100,6 +159,9 @@ Introduce full examples with `<p class="example">Example</p>` (or "examples") so
 Exception – if there are several consecutive examples illustrating different things, they can each be introduced with "Example: <text\>" if that helps to clarify things for the reader.
 
 ## Code
+Inline code and code blocks render in APL font unless.
+
+We have disabled syntax highlighting, but in case we decide to  for semantic purposes and 
 **TODO:** how do we want to handle language-apl/nonAPL and unspecified code blocks?
 
 #### Inline code
@@ -137,10 +199,12 @@ No language specified
 ```
 
 ### APL Code <span class="language-apl">+⌿÷≢⌹</span> in Titles
-Use `<span class="language-apl">` to add code to titles. This will be rendered in APL font on the page but not in the navigation menus.
+Try to avoid using APL code in headings.
+
+If it is essential, use `<span class="language-apl">` to add code to titles. This will be rendered in APL font on the page but not in the navigation menus.
 
 ## References
-References to other documents should correctly name the document and be italicised.
+References to other documents should correctly name the document and be italicised. Ideally they should link to the document (todo: consider versioning).
 
 <p class="example">Example</p>
 
@@ -181,14 +245,3 @@ Use of [icons](https://squidfunk.github.io/mkdocs-material/reference/icons-emoji
     - Command Key: :material-apple-keyboard-command: (`:material-apple-keyboard-command:`)
     - Option key: :material-apple-keyboard-option: (`:material-apple-keyboard-option:`)
 - Windows Key: :fontawesome-brands-windows: (`:fontawesome-brands-windows:`) 
-
-<p class="example">example</p>
-
-
-
-<div markdown>
-
-- a list
-- a list
-
-</p>
