@@ -159,43 +159,70 @@ Introduce full examples with `<p class="example">Example</p>` (or "examples") so
 Exception – if there are several consecutive examples illustrating different things, they can each be introduced with "Example: <text\>" if that helps to clarify things for the reader.
 
 ## Code
-Inline code and code blocks render in APL font unless.
+Inline code and code blocks render in APL font unless the class "language-other" is used.
 
-We have disabled syntax highlighting, but in case we decide to  for semantic purposes and 
-**TODO:** how do we want to handle language-apl/nonAPL and unspecified code blocks?
+We have disabled syntax highlighting.
 
 #### Inline code
 Inline, use `<code>[your code here]</code>` or single backticks `` `[your code here]` ``.
 
 <p class="example">Example</p>
 
+```
+The average of a vector (<code class="language-apl">+⌿÷≢</code>) is the sum divided by the tally.
+```
+
 The average of a vector (<code class="language-apl">+⌿÷≢</code>) is the sum divided by the tally.
 
 #### Code blocks
-Code blocks use `<pre><code></code></pre>`. Code blocks may use triple backticks with "apl" (lowercase) to denote the language. MkDocs will take care of adding the "language-apl" class in this case.
+Code blocks use `<pre><code class="language-apl"></code></pre>` or triple backticks with "apl" (lowercase) to denote the language. MkDocs will take care of adding the "language-apl" class in this case.
 
 <p class="example">Example</p>
 
+```
 <pre><code class="language-apl">      3+⍳10
 4 5 6 7 8 9 10 11 12 13
 </code></pre>
+```
+
+```````
+```apl
+      3+⍳10
+4 5 6 7 8 9 10 11 12 13
+```
+```````
+
+both render as
+
+```apl
+      3+⍳10
+4 5 6 7 8 9 10 11 12 13
+```
 
 #### Non-APL Code
-Either use single backticks (`some code`) or `<code class="nonAPL">some code</code>`.
-
-Code blocks may use triple backticks with "\[language\]" to denote the language. MkDocs will take care of adding the "language-\[language\]" class in this case.
+Use `<code class="language-other">[your code here]</code>`.
 
 <p class="example">Examples</p>
 
-This is an inline example, <code class="nonAPL">print("hello")</code> is a print statement in Python.
+This is an inline example, <code class="language-other">print("hello")</code> is a print statement in Python.
 
-```Python
+```
+<pre><code class="language-other">>>> print("hello")   # Code block example
+hello</code></pre>
+```
+
+``````
+```other
 >>> print("hello")   # Code block example
 hello
 ```
+``````
 
-```
-No language specified
+both render as
+
+```other
+>>> print("hello")   # Code block example
+hello
 ```
 
 ### APL Code <span class="language-apl">+⌿÷≢⌹</span> in Titles
