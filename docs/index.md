@@ -33,13 +33,19 @@ Headings should be written in [title case](https://en.wikipedia.org/wiki/Title_c
 Try to avoid multiple consecutive headings with no intervening text.
 
 ## Italics
+Use italics when introducing a new term.
+
 Italics are denoted by single asterisks surrounding the text.
 
 <p class="example">example</p>
 
+Markup like
+
 ```
 The word *asterisks* is italicised.
 ```
+
+renders as
 
 The word *asterisks* is italicised.
 
@@ -168,9 +174,13 @@ Inline, use `<code>[your code here]</code>` or single backticks `` `[your code h
 
 <p class="example">Example</p>
 
-```
+The following markup
+
+```html
 The average of a vector (<code class="language-apl">+⌿÷≢</code>) is the sum divided by the tally.
 ```
+
+renders as
 
 The average of a vector (<code class="language-apl">+⌿÷≢</code>) is the sum divided by the tally.
 
