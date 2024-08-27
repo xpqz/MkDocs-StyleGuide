@@ -2,8 +2,6 @@
 When using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 
 - todo:
-    - how to do things in markdown/html
-    - finish notes section/examples
     - apply background to rendered examples
     - references in HTML vs. PDF
     - consider linking to specific document versions in references to other documents
@@ -58,7 +56,9 @@ Italics are denoted by single asterisks surrounding the text.
 The word *asterisks* is italicised.
 ```
 
+<div class="example-result">
 The word *asterisks* is italicised.
+</div>>
 
 ## Bold
 Bold text is denoted by double asterisks surrounding text.
@@ -77,7 +77,9 @@ Bold text is used for:
 Go to the **file** menu
 ```
 
+<div class="example-result">
 Go to the **file** menu
+</div>>
 
 ## Hyperlinks
 Used to create links to other parts of the same document, [other documents](#references) or external sources.
@@ -90,9 +92,9 @@ Link text is surrounded by square brackets and the link URL is in round parenthe
 Link can be downloaded from [https://github.com/Dyalog/link](https://github.com/Dyalog/link)
 ```
 
-<section class="example-output" markdown="1">
+<div class="example-output" markdown="1">
 Link can be downloaded from [https://github.com/Dyalog/link](https://github.com/Dyalog/link)
-</section>
+</div>>
 
 <p class="example">Example: alternative link text</p>
 
@@ -100,9 +102,9 @@ Link can be downloaded from [https://github.com/Dyalog/link](https://github.com/
 Download [Link](https://github.com/Dyalog/link) and...
 ```
 
-<section class="example-output" markdown="1">
+<div class="example-output" markdown="1">
 Download [Link](https://github.com/Dyalog/link) and...
-</section>
+</div>>
 
 ## Markdown inside HTML
 Sometimes it might be useful to use markdown inside HTML tags. For example, when including links inside a table.
@@ -117,16 +119,16 @@ Markdown renders in here. For example, *italicised text*.
 </p>
 ```
 
-<section class="example-output" markdown="1">
+<div class="example-output" markdown="1">
 <p class="myclass" markdown="1">
 Markdown renders in here. For example, *italicised text*.
 </p>
-</section>
+</div>>
 
 ## Notes
 
 ### Creating a Note
-Notes are [admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).
+Notes are implemented as MkDocs [admonitions](https://squidfunk.github.io/mkdocs-material/reference/admonitions/).
 
 They are denoted by three exclamation marks followed by the note type and title text. On subsequent lines, note content is indented by four spaces.
 
@@ -134,123 +136,157 @@ We use a fixed set of admonition types for consistency.
 
 **Do not forget** to include the title text. The title text must be as shown below.
 
-<p class="example">example</p>
-
-```
-!!! Tip "Hints and Recommendations"
-    This is the note content.
-```
-
-!!! Tip "Hints and Recommendations"
-    This is the note content.
-
 ### Note types
-- `!!! Tip "Hints and Recommendations"`
+
+#### General Notes for Emphasis
+Notes are used to highlight important information.
+
+- Hints and Recommendations
     
     Hints, tips, best practice and recommendations from Dyalog Ltd
 
     <p class="example">example</p>
 
+    ```
     !!! Tip "Hints and Recommendations"
-        If both DOSLimit and BufferSize are set, then the smaller value applies. Dyalog Ltd recommends using a modest BufferSize and not setting EnableBufferSizeHttp to ensure that abnormally large headers are not processed, then setting an appropriate DOSLimit to accommodate the expected size messages
+        If both DOSLimit and BufferSize are set, then the smaller value applies. Dyalog Ltd recommends using a modest BufferSize and not setting EnableBufferSizeHttp to ensure that abnormally large headers are not processed, then setting an appropriate DOSLimit to accommodate the expected size messages.
+    ```
 
-- `!!! Info "Information"`
+    <div class="example-result" markdown="1">
+
+    !!! Tip "Hints and Recommendations"
+        If both DOSLimit and BufferSize are set, then the smaller value applies. Dyalog Ltd recommends using a modest BufferSize and not setting EnableBufferSizeHttp to ensure that abnormally large headers are not processed, then setting an appropriate DOSLimit to accommodate the expected size messages.
+    
+    </div>>
+
+- Information
 
     Highlighting material of particular significance or relevance
 
-- `!!! Warning "Warning"`
+    <p class="example">example</p>
+
+    ```
+    !!! Info "Information"
+        The .NET interface only works with the Unicode edition of Dyalog; Classic edition is not supported.
+    ```
+
+    <div class="example-result" markdown="1">
+
+    !!! Info "Information"
+        The .NET interface only works with the Unicode edition of Dyalog; Classic edition is not supported.
+    
+    </div>>
+
+- Warning
 
     Warnings about actions that can impact the behaviour of Dyalog or have unforeseen consequences
 
-- `!!! Legacy "Legacy"`
+    <p class="example">example</p>
+
+    ```
+    !!! Warning "Warning"
+        The structure under the SALT directory must not be modified and the five sub-directories must not be renamed.
+    ```
+
+    <div class="example-result" markdown="1">
+
+    !!! Warning "Warning"
+        The structure under the SALT directory must not be modified and the five sub-directories must not be renamed.
+    
+    </div>>
+
+- Legacy
 
     Legacy information pertaining to behaviour in earlier releases of Dyalog or to functionality that still exists but has been superseded and is no longer recommended
 
-- `!!! linux "Dyalog on Linux"`
+    <p class="example">example</p>
+
+    ```
+    !!! Legacy "Legacy"
+        Although .dyapp files are supported for backwards compatibility, Dyalog Ltd recommends launching the interpreter directly from any APL source or configuration file (functionality introduced with Dyalog version 18.0) rather than through the now-superseded .dyapp file mechanism.
+    ```
+
+    <div class="example-result" markdown="1">
+
+    !!! Legacy "Legacy"
+        Although .dyapp files are supported for backwards compatibility, Dyalog Ltd recommends launching the interpreter directly from any APL source or configuration file (functionality introduced with Dyalog version 18.0) rather than through the now-superseded .dyapp file mechanism.
+    
+    </div>>
+
+#### Operating-system-specific Behaviour
+Notes are also used to differentiate between operating-system-specific behaviour in cross-platform documents:
+
+- Dyalog on Linux
 
     Behaviour specific to Dyalog on Linux
 
-- `!!! unix "Dyalog on UNIX"`
+    <p class="example">example</p>
+
+    ```
+    !!! linux "Dyalog on Linux"
+        The MyUCMDs directory is located directly under the **$HOME** directory
+    ```
+
+    <div class="example-result" markdown="1">
+
+    !!! linux "Dyalog on Linux"
+        The MyUCMDs directory is located directly under the **$HOME** directory
+    
+    </div>>
+
+- Dyalog on UNIX
 
     Behaviour specific to Dyalog on UNIX
 
-- `!!! macOS "Dyalog on macOS"`
+    <p class="example">example</p>
+
+    ```
+    !!! unix "Dyalog on UNIX"
+        By default, the cache file is located in **$HOME/.dyalog/**
+    ```
+
+    <div class="example-result" markdown="1">
+
+    !!! unix "Dyalog on UNIX"
+        By default, the cache file is located in **$HOME/.dyalog/**
+    
+    </div>>
+
+- Dyalog on macOS
 
     Behaviour specific to Dyalog on macOS
 
-- `!!! windows "Dyalog on Microsoft Windows"`
+    <p class="example">example</p>
+
+    ```
+    !!! macOS "Dyalog on macOS"
+        By default, the cache file is located in **Users/<name\>/.dyalog/**
+    ```
+
+    <div class="example-result" markdown="1">
+
+    !!! macOS "Dyalog on macOS"
+        By default, the cache file is located in **Users/<name\>/.dyalog/**
+    
+    </div>>
+
+- Dyalog on Microsoft Windows
 
     Behaviour specific to Dyalog on Microsoft Windows
 
-
-
-### General Notes for Emphasis
-
-<p class="example">example</p>
-
-```
-Go to the **file** menu
-```
-
-Go to the **file** menu
-
-
-
-Various icons are used in the documentation to emphasise specific material:
-
-!!! Tip "Hints and Recommendations"
-    Hints, tips, best practice and recommendations from Dyalog Ltd
-
-    This note type is "Tip".
-
     <p class="example">example</p>
 
-    If both DOSLimit and BufferSize are set, then the smaller value applies. Dyalog Ltd recommends using a modest BufferSize and not setting EnableBufferSizeHttp to ensure that abnormally large headers are not processed, then setting an appropriate DOSLimit to accommodate the expected size messages
+    ```
+    !!! windows "Dyalog on Microsoft Windows"
+        By default, the cache file is located in **Documents\\Dyalog APL <version> Files\\**
+    ```
 
-!!! Info "Information"
-    Highlighting material of particular significance or relevance
+    <div class="example-result" markdown="1">
 
-    <p class="example">example</p>
-
-    The .NET interface only works with the Unicode edition of Dyalog; Classic edition is not supported.
-
-!!! Warning
-    Warnings about actions that can impact the behaviour of Dyalog or have unforeseen consequences
-
-    <p class="example">example</p>
-
-    The structure under the SALT directory must not be modified and the five sub-directories must not be renamed.
-
-!!! Legacy
-    Legacy information pertaining to behaviour in earlier releases of Dyalog or to functionality that still exists but has been superseded and is no longer recommended
-
-    <p class="example">example</p>
-
-    Although .dyapp files are supported for backwards compatibility, Dyalog Ltd recommends launching the interpreter directly from any APL source or configuration file (functionality introduced with Dyalog version 18.0) rather than through the now-superseded .dyapp file mechanism.
-
-### Operating-system-specific Behaviour
-
-Notes are also used to differentiate between operating-system-specific behaviour in cross-platform documents:
-
-!!! linux "Dyalog on Linux"
-    <p class="example">example</p>
-
-    The MyUCMDs directory is located directly under the **$HOME** directory
-
-!!! unix "Dyalog on UNIX"
-    <p class="example">example</p>
-
-    By default, the cache file is located in **$HOME/.dyalog/**
-
-!!! macOS "Dyalog on macOS"
-    <p class="example">example</p>
-
-    By default, the cache file is located in **Users/<name\>/.dyalog/**
-
-!!! windows "Dyalog on Microsoft Windows"
-    <p class="example">example</p>
-
-    By default, the cache file is located in **Documents\\Dyalog APL <version> Files\\**
+    !!! windows "Dyalog on Microsoft Windows"
+        By default, the cache file is located in **Documents\\Dyalog APL <version> Files\\**
+    
+    </div>>
 
 ## Actions and Instructions
 Instructions are used when there is a logical sequence of steps to do something.
@@ -270,7 +306,7 @@ Instructions are written as an ordered list. Blocks that contain instructions sh
 ---
 ```
 
-<section class="example-output" markdown="1">
+<div class="example-output" markdown="1">
 
 ---
 
@@ -281,7 +317,7 @@ Instructions are written as an ordered list. Blocks that contain instructions sh
 
 ---
 
-</section>
+</div>>
 
 ## Examples
 Examples are used to demonstrate the functionality discussed.
@@ -297,12 +333,12 @@ Exception – if there are several consecutive examples illustrating different t
 This is an example
 ```
 
-<section class="example-output" markdown="1">
+<div class="example-output" markdown="1">
 
 <p class="example">example</p>
 This is an example
 
-</section>
+</div>>
 
 ## Code
 Inline code and code blocks render in APL font unless the class "language-other" is used.
@@ -318,11 +354,11 @@ Inline, use `<code>[your code here]</code>` or single backticks `` `[your code h
 The average of a vector (<code class="language-apl">+⌿÷≢</code>) is the sum divided by the tally.
 ```
 
-<section class="example-output" markdown="1">
+<div class="example-output" markdown="1">
 
 The average of a vector (<code class="language-apl">+⌿÷≢</code>) is the sum divided by the tally.
 
-</section>
+</div>>
 
 <p class="example">Example: non-APL code</p>
 
@@ -330,11 +366,11 @@ The average of a vector (<code class="language-apl">+⌿÷≢</code>) is the sum
 <code class="language-other">getpid()</code> is common to all UNIX platforms.
 ```
 
-<section class="example-output" markdown="1">
+<div class="example-output" markdown="1">
 
 <code class="language-other">getpid()</code> is common to all UNIX platforms.
 
-</section>
+</div>>
 
 #### APL Code blocks
 Code blocks use `<pre><code class="language-apl"></code></pre>` or triple backticks with "apl" (lowercase) to denote the language.
@@ -416,9 +452,9 @@ Reference to another section within the same document.
 See [Note Types](#note-types)
 ```
 
-<section class="example-output" markdown="1">
+<div class="example-output" markdown="1">
 See [Note Types](#note-types)
-</section>
+</div>>
 
 ### To another document
 References to other documents should correctly name the document and be italicised. Ideally they should link to the document.
@@ -429,11 +465,11 @@ References to other documents should correctly name the document and be italicis
 For more information on the *Clean* function, see the [*SALT User Guide*](https://docs.dyalog.com/latest/SALT%20User%20Guide.pdf).
 ```
 
-<section class="example-output" markdown="1">
+<div class="example-output" markdown="1">
 
 For more information on the *Clean* function, see the [*SALT User Guide*](https://docs.dyalog.com/latest/SALT%20User%20Guide.pdf).
 
-</section>
+</div>>
 
 ## Command Codes and Keys
 When referring to keyboard shortcuts, such as those controlled by `⎕KL` on Microsoft Windows, put the code in angle brackets.
@@ -446,9 +482,9 @@ Closing angle brackets must be escaped with a backslash (e.g. `<keycode\>`).
 <TC\> is the command code for trace.
 ```
 
-<section class="example-output" markdown="1">
+<div class="example-output" markdown="1">
 <TC\> is the command code for trace.
-</section>
+</div>>
 
 ## Keyboard keys
 Use the `<kbd>` tag to refer to keys.
@@ -459,9 +495,9 @@ Use the `<kbd>` tag to refer to keys.
 Press the <kbd>Enter</kbd> key.
 ```
 
-<section class="example-output" markdown="1">
+<div class="example-output" markdown="1">
 Press the <kbd>Enter</kbd> key.
-</section>
+</div>>
 
 ## Figures with Captions
 !!! Info "Information"
@@ -493,6 +529,6 @@ Here is the list of icons used in our documentation.
 Use <kbd markdown="1">:material-apple-keyboard-command: + C</kbd> to copy text
 ```
 
-<section class="example-output" markdown="1">
+<div class="example-output" markdown="1">
 Use <kbd markdown="1">:material-apple-keyboard-command: + C</kbd> to copy text
-</section>
+</div>>
