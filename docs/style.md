@@ -1,17 +1,6 @@
 # Style Guide
 When using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 
-- todo:
-    - apply background to rendered examples
-    - references in HTML vs. PDF
-    - consider linking to specific document versions in references to other documents
-    - what is happening with [figures with captions](#figures-with-captions) (and tables)
-    - section on tables
-    - introduce markdown and HTML?
-
-## Markdown and HTML
-For more example of markdown and equivalent HTML, see the [basic syntax page on markdownguide.org](https://www.markdownguide.org/basic-syntax/_).
-
 ## Document Structure and General Style Guidelines
 
 !!! Info "Information"
@@ -56,7 +45,7 @@ Italics are denoted by single asterisks surrounding the text.
 The word *asterisks* is italicised.
 ```
 
-<div class="example-result">
+<div class="example-output" markdown="1">
 The word *asterisks* is italicised.
 </div>>
 
@@ -77,7 +66,7 @@ Bold text is used for:
 Go to the **file** menu
 ```
 
-<div class="example-result">
+<div class="example-output" markdown="1">
 Go to the **file** menu
 </div>>
 
@@ -152,12 +141,12 @@ Notes are used to highlight important information.
         If both DOSLimit and BufferSize are set, then the smaller value applies. Dyalog Ltd recommends using a modest BufferSize and not setting EnableBufferSizeHttp to ensure that abnormally large headers are not processed, then setting an appropriate DOSLimit to accommodate the expected size messages.
     ```
 
-    <div class="example-result" markdown="1">
+    <div class="example-output" markdown="1">
 
     !!! Tip "Hints and Recommendations"
         If both DOSLimit and BufferSize are set, then the smaller value applies. Dyalog Ltd recommends using a modest BufferSize and not setting EnableBufferSizeHttp to ensure that abnormally large headers are not processed, then setting an appropriate DOSLimit to accommodate the expected size messages.
     
-    </div>>
+    </div>
 
 - Information
 
@@ -170,12 +159,12 @@ Notes are used to highlight important information.
         The .NET interface only works with the Unicode edition of Dyalog; Classic edition is not supported.
     ```
 
-    <div class="example-result" markdown="1">
+    <div class="example-output" markdown="1">
 
     !!! Info "Information"
         The .NET interface only works with the Unicode edition of Dyalog; Classic edition is not supported.
     
-    </div>>
+    </div>
 
 - Warning
 
@@ -188,12 +177,12 @@ Notes are used to highlight important information.
         The structure under the SALT directory must not be modified and the five sub-directories must not be renamed.
     ```
 
-    <div class="example-result" markdown="1">
+    <div class="example-output" markdown="1">
 
     !!! Warning "Warning"
         The structure under the SALT directory must not be modified and the five sub-directories must not be renamed.
     
-    </div>>
+    </div>
 
 - Legacy
 
@@ -206,12 +195,12 @@ Notes are used to highlight important information.
         Although .dyapp files are supported for backwards compatibility, Dyalog Ltd recommends launching the interpreter directly from any APL source or configuration file (functionality introduced with Dyalog version 18.0) rather than through the now-superseded .dyapp file mechanism.
     ```
 
-    <div class="example-result" markdown="1">
+    <div class="example-output" markdown="1">
 
     !!! Legacy "Legacy"
         Although .dyapp files are supported for backwards compatibility, Dyalog Ltd recommends launching the interpreter directly from any APL source or configuration file (functionality introduced with Dyalog version 18.0) rather than through the now-superseded .dyapp file mechanism.
     
-    </div>>
+    </div>
 
 #### Operating-system-specific Behaviour
 Notes are also used to differentiate between operating-system-specific behaviour in cross-platform documents:
@@ -227,12 +216,12 @@ Notes are also used to differentiate between operating-system-specific behaviour
         The MyUCMDs directory is located directly under the **$HOME** directory
     ```
 
-    <div class="example-result" markdown="1">
+    <div class="example-output" markdown="1">
 
     !!! linux "Dyalog on Linux"
         The MyUCMDs directory is located directly under the **$HOME** directory
     
-    </div>>
+    </div>
 
 - Dyalog on UNIX
 
@@ -245,12 +234,12 @@ Notes are also used to differentiate between operating-system-specific behaviour
         By default, the cache file is located in **$HOME/.dyalog/**
     ```
 
-    <div class="example-result" markdown="1">
+    <div class="example-output" markdown="1">
 
     !!! unix "Dyalog on UNIX"
         By default, the cache file is located in **$HOME/.dyalog/**
     
-    </div>>
+    </div>
 
 - Dyalog on macOS
 
@@ -263,12 +252,12 @@ Notes are also used to differentiate between operating-system-specific behaviour
         By default, the cache file is located in **Users/<name\>/.dyalog/**
     ```
 
-    <div class="example-result" markdown="1">
+    <div class="example-output" markdown="1">
 
     !!! macOS "Dyalog on macOS"
         By default, the cache file is located in **Users/<name\>/.dyalog/**
     
-    </div>>
+    </div>
 
 - Dyalog on Microsoft Windows
 
@@ -281,12 +270,12 @@ Notes are also used to differentiate between operating-system-specific behaviour
         By default, the cache file is located in **Documents\\Dyalog APL <version> Files\\**
     ```
 
-    <div class="example-result" markdown="1">
+    <div class="example-output" markdown="1">
 
     !!! windows "Dyalog on Microsoft Windows"
         By default, the cache file is located in **Documents\\Dyalog APL <version> Files\\**
     
-    </div>>
+    </div>
 
 ## Actions and Instructions
 Instructions are used when there is a logical sequence of steps to do something.
@@ -530,5 +519,5 @@ Use <kbd markdown="1">:material-apple-keyboard-command: + C</kbd> to copy text
 ```
 
 <div class="example-output" markdown="1">
-Use <kbd markdown="1">:material-apple-keyboard-command: + C</kbd> to copy text
+Use <kbd markdown="1">:material-apple-keyboard-command:</kbd> + <kbd>C</kbd> to copy text
 </div>>
