@@ -19,3 +19,8 @@ markdown_extensions:
 extra_css:
   - styles/custom-admonitions.css
   - styles/main.css
+nav:
+  - Home: index.md
+  - Rules for Writing Documentation: rules.md
+  - Style Guide: style.md
+  - Process: process.md
