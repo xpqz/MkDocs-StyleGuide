@@ -90,7 +90,7 @@ Link text is surrounded by square brackets and the link URL is in round parenthe
 Link can be downloaded from [https://github.com/Dyalog/link](https://github.com/Dyalog/link)
 ```
 
-<section class="example-background" markdown="1">
+<section class="example-output" markdown="1">
 Link can be downloaded from [https://github.com/Dyalog/link](https://github.com/Dyalog/link)
 </section>
 
@@ -100,7 +100,7 @@ Link can be downloaded from [https://github.com/Dyalog/link](https://github.com/
 Download [Link](https://github.com/Dyalog/link) and...
 ```
 
-<section class="example-background" markdown="1">
+<section class="example-output" markdown="1">
 Download [Link](https://github.com/Dyalog/link) and...
 </section>
 
@@ -117,7 +117,7 @@ Markdown renders in here. For example, *italicised text*.
 </p>
 ```
 
-<section class="example-background" markdown="1">
+<section class="example-output" markdown="1">
 <p class="myclass" markdown="1">
 Markdown renders in here. For example, *italicised text*.
 </p>
@@ -270,7 +270,7 @@ Instructions are written as an ordered list. Blocks that contain instructions sh
 ---
 ```
 
-<section class="example-background" markdown="1">
+<section class="example-output" markdown="1">
 
 ---
 
@@ -297,7 +297,7 @@ Exception – if there are several consecutive examples illustrating different t
 This is an example
 ```
 
-<section class="example-background" markdown="1">
+<section class="example-output" markdown="1">
 
 <p class="example">example</p>
 This is an example
@@ -318,7 +318,7 @@ Inline, use `<code>[your code here]</code>` or single backticks `` `[your code h
 The average of a vector (<code class="language-apl">+⌿÷≢</code>) is the sum divided by the tally.
 ```
 
-<section class="example-background" markdown="1">
+<section class="example-output" markdown="1">
 
 The average of a vector (<code class="language-apl">+⌿÷≢</code>) is the sum divided by the tally.
 
@@ -330,7 +330,7 @@ The average of a vector (<code class="language-apl">+⌿÷≢</code>) is the sum
 <code class="language-other">getpid()</code> is common to all UNIX platforms.
 ```
 
-<section class="example-background" markdown="1">
+<section class="example-output" markdown="1">
 
 <code class="language-other">getpid()</code> is common to all UNIX platforms.
 
@@ -416,7 +416,7 @@ Reference to another section within the same document.
 See [Note Types](#note-types)
 ```
 
-<section class="example-background" markdown="1">
+<section class="example-output" markdown="1">
 See [Note Types](#note-types)
 </section>
 
@@ -429,7 +429,7 @@ References to other documents should correctly name the document and be italicis
 For more information on the *Clean* function, see the [*SALT User Guide*](https://docs.dyalog.com/latest/SALT%20User%20Guide.pdf).
 ```
 
-<section class="example-background" markdown="1">
+<section class="example-output" markdown="1">
 
 For more information on the *Clean* function, see the [*SALT User Guide*](https://docs.dyalog.com/latest/SALT%20User%20Guide.pdf).
 
@@ -446,7 +446,7 @@ Closing angle brackets must be escaped with a backslash (e.g. `<keycode\>`).
 <TC\> is the command code for trace.
 ```
 
-<section class="example-background" markdown="1">
+<section class="example-output" markdown="1">
 <TC\> is the command code for trace.
 </section>
 
@@ -459,7 +459,7 @@ Use the `<kbd>` tag to refer to keys.
 Press the <kbd>Enter</kbd> key.
 ```
 
-<section class="example-background" markdown="1">
+<section class="example-output" markdown="1">
 Press the <kbd>Enter</kbd> key.
 </section>
 
@@ -493,6 +493,6 @@ Here is the list of icons used in our documentation.
 Use <kbd markdown="1">:material-apple-keyboard-command: + C</kbd> to copy text
 ```
 
-<section class="example-background" markdown="1">
+<section class="example-output" markdown="1">
 Use <kbd markdown="1">:material-apple-keyboard-command: + C</kbd> to copy text
 </section>
