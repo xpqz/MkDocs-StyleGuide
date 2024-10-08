@@ -497,7 +497,7 @@ Here is the list of icons used in our documentation.
 <p class="example">Example</p>
 
 ```
-Use <kbd markdown="1">:material-apple-keyboard-command: + C</kbd> to copy text
+Use <kbd markdown="1">:material-apple-keyboard-command:</kbd> + <kbd>C</kbd> to copy text
 ```
 
 <div class="example-output" markdown="1">
