@@ -4,7 +4,7 @@ When using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
 ## Document Structure and General Style Guidelines
 
 !!! Info "Information"
-    [Style_Guide_and_Best_Practice](http://wiki.dyalog.bramley/index.php/Style_Guide_and_Best_Practice) on the internal wiki covers:
+    [Style_Guide_and_Best_Practice](https://wiki.bramley.dyalog.com/index.php/Style_Guide_and_Best_Practice) on the internal wiki covers:
 
     - The structure to use for documents
     - General rules to follow when writing, including language-related guidelines such as the use of Dyalog-specific terms, how to mention third-party products, and the use of abbreviations and acronyms.
