@@ -83,13 +83,13 @@ Used to create links to other parts of the same document, [other documents](#ref
 
 Link text is surrounded by square brackets and the link URL is in round parentheses.
 
-- Example: link text is URL
+- <span class="example">Example: link text is URL</span>
     ```
     Link can be downloaded from [https://github.com/Dyalog/link](https://github.com/Dyalog/link)
     ```
     Link can be downloaded from [https://github.com/Dyalog/link](https://github.com/Dyalog/link)
 
-- Example: alternative link text
+- <span class="example">Example: alternative link text</span>
     ```
     Download [Link](https://github.com/Dyalog/link) and...
     ```
@@ -104,8 +104,8 @@ All HTML is valid Markdown, which on occasion provides a helpful escape hatch to
 
 We have added extensions to make the use of HTML avoidable:
 
-* Extended table syntax to allow the use of headerless tables with row-, and col-spans. 
-* Attribute lists to allow for assigning CSS classes and IDs to elements without encasing them in HTML tags.
+* Extended table syntax to allow the use of headerless [tables](./tables.md) with row-, and col-spans. 
+* Attribute lists, such as `{ .example}` to allow for assigning CSS classes and IDs to elements without encasing them in HTML tags.
 
 ## Markdown inside HTML
 Sometimes it might be useful to use Markdown inside HTML tags. For example, when including links inside a table.
@@ -146,9 +146,7 @@ Notes are used to highlight important information.
     
     Hints, tips, best practice and recommendations from Dyalog Ltd
 
-    <p class="example">example</p>
-
-    ```
+    ``` { .example}
     !!! Tip "Hints and Recommendations"
         If both DOSLimit and BufferSize are set, then the smaller value applies. Dyalog Ltd recommends using a modest BufferSize and not setting EnableBufferSizeHttp to ensure that abnormally large headers are not processed, then setting an appropriate DOSLimit to accommodate the expected size messages.
     ```
@@ -323,23 +321,35 @@ Instructions are written as an ordered list. Blocks that contain instructions sh
 ## Examples
 Examples are used to demonstrate the functionality discussed.
 
-Introduce full examples with `<p class="example">Example</p>` (or "Examples") so that it is on a line by itself.
+Introduce full examples with:
+
+```
+example (or examples)
+{ .example}
+```
+
+which renders as `<p class="example">example</p>`.
 
 Exception – if there are several consecutive examples illustrating different things, they can each be introduced with "Example: <text\>" if that helps to clarify things for the reader.
 
-<p class="example">example</p>
+!!! Info "Information"
+    The examples in this document use `<div class="example-output" markdown="1">` to provide a grey background that distinguishes examples from normal text. However, we do not use this convention in our actual documentation.
 
 ```
-<p class="example">example</p>
+example
+{ .example}
+
 This is an example
 ```
 
 <div class="example-output" markdown="1">
 
-<p class="example">example</p>
+example
+{ .example}
+
 This is an example
 
-</div>>
+</div>
 
 ## Code
 Inline code and code blocks render in APL font unless the class "language-other" is used.
@@ -458,28 +468,28 @@ When referring to keyboard shortcuts, such as those controlled by `⎕KL` on Mic
 
 Closing angle brackets must be escaped with a backslash (e.g. `<keycode\>`).
 
-<p class="example">Example</p>
+Example
+{ .example}
 
 ```
 <TC\> is the command code for trace.
 ```
 
-<div class="example-output" markdown="1">
 <TC\> is the command code for trace.
-</div>>
+{ .example-output}
 
 ## Keyboard keys
 Use the `<kbd>` tag to refer to keys. This is a case where using HTML markup is unavoidable.
 
-<p class="example">Example</p>
+example
+{ .example}
 
 ```
 Press the <kbd>Enter</kbd> key.
 ```
 
-<div class="example-output" markdown="1">
 Press the <kbd>Enter</kbd> key.
-</div>>
+{ .example-output}
 
 ## Icons
 Sometimes it is relevant to include an icon. For example, when describing a combination of key presses.
